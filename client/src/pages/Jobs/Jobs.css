@@ -1,0 +1,29 @@
+.jobs-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.jobs-page__header h1 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin: 0 0 4px;
+}
+
+.jobs-page__header p {
+  color: #64748b;
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.jobs-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .jobs-page__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,78 @@
+.jd-selector__tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.jd-tab {
+  border: none;
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.jd-tab--active {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+}
+
+.jd-selector__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.jd-selector__empty {
+  color: #64748b;
+  font-size: 0.88rem;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.jd-selector__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.jd-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: #1e293b;
+  transition: all 0.15s ease;
+}
+
+.jd-item:hover {
+  border-color: #93c5fd;
+}
+
+.jd-item--active {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.jd-item__company {
+  color: #64748b;
+  font-weight: 400;
+}
+
+.jd-item__delete {
+  border: none;
+  background: transparent;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 4px;
+}

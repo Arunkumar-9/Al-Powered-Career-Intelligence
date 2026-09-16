@@ -1,0 +1,29 @@
+.ai-analysis-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ai-analysis-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ai-analysis-header h1 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin: 0 0 4px;
+}
+
+.ai-analysis-header p {
+  color: #64748b;
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.ai-analysis-results {
+  min-height: 100px;
+}

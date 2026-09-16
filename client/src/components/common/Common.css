@@ -1,0 +1,221 @@
+/* Shared theme building blocks for Milestone 3 modules.
+   Palette matches the existing Dashboard/Resume styling:
+   primary #2563eb, gradient #2563eb -> #3b82f6, headings #1e293b,
+   muted text #64748b, card radius 18px. */
+
+.ui-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 22px;
+}
+
+.ui-card--tight {
+  padding: 16px;
+}
+
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.ui-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ui-btn--primary {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.28);
+}
+
+.ui-btn--primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.35);
+}
+
+.ui-btn--outline {
+  background: #fff;
+  color: #2563eb;
+  border: 1.5px solid #dbeafe;
+}
+
+.ui-btn--outline:hover:not(:disabled) {
+  border-color: #2563eb;
+}
+
+.ui-btn--ghost {
+  background: transparent;
+  color: #64748b;
+}
+
+.ui-btn--sm {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+.ui-input,
+.ui-textarea,
+.ui-select {
+  width: 100%;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 0.92rem;
+  color: #1e293b;
+  background: #f8fafc;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ui-input:focus,
+.ui-textarea:focus,
+.ui-select:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #fff;
+}
+
+.ui-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.ui-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.ui-section-title h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.ui-section-title p {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: 4px 0 0;
+}
+
+.ui-progress-track {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.ui-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transition: width 0.6s ease;
+}
+
+.ui-progress-fill--warn {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.ui-progress-fill--danger {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.ui-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.ui-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.ui-spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid #dbeafe;
+  border-top-color: #2563eb;
+  animation: ui-spin 0.8s linear infinite;
+}
+
+@keyframes ui-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ui-skeleton {
+  background: linear-gradient(90deg, #eef2f7 25%, #f8fafc 37%, #eef2f7 63%);
+  background-size: 400% 100%;
+  animation: ui-skeleton-shine 1.4s ease infinite;
+  border-radius: 10px;
+}
+
+@keyframes ui-skeleton-shine {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+.ui-error-state {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-size: 0.9rem;
+}
+
+.ui-empty-state {
+  text-align: center;
+  color: #64748b;
+  padding: 40px 20px;
+}
+
+.ui-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.ui-chip--match {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.ui-chip--missing {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.ui-chip--neutral {
+  background: #eff6ff;
+  color: #1d4ed8;
+}

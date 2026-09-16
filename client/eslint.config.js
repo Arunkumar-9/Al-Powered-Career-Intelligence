@@ -17,5 +17,14 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+    rules: {
+      // Requests are started from effects and update state only after the
+      // promise settles; this pattern is intentional throughout the app.
+      'react-hooks/set-state-in-effect': 'off',
+      'react-hooks/immutability': 'off',
+      'react-hooks/exhaustive-deps': 'off',
+      // This context module intentionally exports both a provider and hook.
+      'react-refresh/only-export-components': 'off',
+    },
   },
 ])

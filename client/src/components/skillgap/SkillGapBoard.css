@@ -1,0 +1,46 @@
+.skillgap-board__top {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.skillgap-board__score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skillgap-board__viz h3 {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.skillgap-board__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.skillgap-board__full {
+  grid-column: 1 / -1;
+}
+
+.skillgap-board__grid h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.skillgap-empty {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .skillgap-board__top,
+  .skillgap-board__grid {
+    grid-template-columns: 1fr;
+  }
+}

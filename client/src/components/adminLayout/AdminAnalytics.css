@@ -1,0 +1,54 @@
+.admin-bar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-bar-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 50px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.admin-bar-row .admin-bar-label {
+    color: #334155;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-bar-track {
+    background: #f1f5f9;
+    border-radius: 6px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.admin-bar-fill {
+    background: #2563eb;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.admin-bar-row .admin-bar-count {
+    color: #64748b;
+    text-align: right;
+}
+
+.admin-analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.admin-note-panel {
+    border-left: 4px solid #f59e0b;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}

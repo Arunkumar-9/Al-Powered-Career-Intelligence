@@ -1,6 +1,7 @@
 import User from "../models/User.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { logActivity } from "../utils/logActivity.js";
 
 export const register = async (req, res) => {
   try {
@@ -31,6 +32,8 @@ export const register = async (req, res) => {
       email,
       password: hashedPassword,
     });
+
+    logActivity({ userId: user._id, type: "registration", message: `${user.name} registered` });
 
     // Generate JWT
     const token = jwt.sign(
@@ -86,9 +89,22 @@ export const login = async (req, res) => {
       });
     }
 
+    // Admin Dashboard: a deactivated account cannot sign in anywhere,
+    // including the normal user app — otherwise "deactivate user"
+    // would have no real effect.
+    if (user.isActive === false) {
+      return res.status(403).json({
+        message: "This account has been deactivated. Please contact support.",
+      });
+    }
+
+    user.lastLoginAt = new Date();
+    await user.save();
+    logActivity({ userId: user._id, type: "login", message: `${user.name} logged in` });
+
     // Generate token
     const token = jwt.sign(
-      { id: user._id },
+      { id: user._id, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: "7d" }
     );
@@ -100,6 +116,7 @@ export const login = async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
+        role: user.role,
       },
     });
 

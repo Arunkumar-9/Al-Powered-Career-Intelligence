@@ -1,0 +1,38 @@
+.learning-path {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+  position: relative;
+}
+
+.learning-path__step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.learning-path__badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.learning-path__step strong {
+  color: #1e293b;
+  font-size: 0.92rem;
+}
+
+.learning-path__step p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}

@@ -19,6 +19,23 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+
+    // ---- Admin Dashboard additions ----
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
+
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
+
+    lastLoginAt: {
+      type: Date,
+      default: null,
+    },
   },
   {
     timestamps: true,

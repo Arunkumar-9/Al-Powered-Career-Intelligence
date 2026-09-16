@@ -1,0 +1,218 @@
+/* Scoped to the Resume History section embedded in the Resume page.
+   Matches Resume.css tokens: white cards, 18px radius, shadow
+   0 10px 25px rgba(0,0,0,.08), primary blue #2563eb, muted #64748b. */
+
+.resume-history-section {
+  margin-top: 30px;
+}
+
+.resume-history-section__header h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2563eb;
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+}
+
+.resume-history-section__header p {
+  color: #64748b;
+  margin: 0 0 20px;
+  font-size: 0.92rem;
+  text-align: left;
+}
+
+.resume-history-section__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.resume-history-section__search {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+}
+
+.resume-history-section__search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.resume-history-section__search .ui-input {
+  padding-left: 38px;
+}
+
+.resume-history-section__toolbar select.ui-select {
+  width: auto;
+  min-width: 190px;
+}
+
+.resume-history-section__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resume-history-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1.5px solid transparent;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.resume-history-row--active {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.resume-history-row__main {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 240px;
+  flex: 1;
+}
+
+.resume-history-row__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+.resume-history-row__info {
+  min-width: 0;
+}
+
+.resume-history-row__title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.resume-history-row__title-row h4 {
+  margin: 0;
+  font-size: 0.96rem;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+.rh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.rh-badge--active {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.resume-history-row__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #64748b;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.resume-history-row__side {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.resume-history-row__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.resume-history-row__delete {
+  color: #ef4444;
+}
+
+.rh-score {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.rh-score--good {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.rh-score--warn {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.rh-score--poor {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.rh-score--neutral {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.resume-history-section__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-top: 18px;
+}
+
+.resume-history-section__pagination-controls {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 700px) {
+  .resume-history-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resume-history-row__side {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

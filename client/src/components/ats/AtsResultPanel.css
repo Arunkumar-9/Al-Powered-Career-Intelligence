@@ -1,0 +1,81 @@
+.ats-panel__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.ats-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ats-card--status {
+  gap: 10px;
+}
+
+.ats-card--status p {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.ats-status-badge {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.ats-status--excellent { background: #dcfce7; color: #15803d; }
+.ats-status--good { background: #dbeafe; color: #1d4ed8; }
+.ats-status--average { background: #fef3c7; color: #b45309; }
+.ats-status--poor { background: #fee2e2; color: #b91c1c; }
+
+.ats-panel__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.ats-panel__full {
+  grid-column: 1 / -1;
+}
+
+.ats-panel__grid h3 {
+  font-size: 1rem;
+  color: #1e293b;
+  margin: 0 0 12px;
+}
+
+.ats-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ats-empty {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.ats-list {
+  margin: 0;
+  padding-left: 18px;
+  color: #334155;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .ats-panel__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ats-panel__grid {
+    grid-template-columns: 1fr;
+  }
+}

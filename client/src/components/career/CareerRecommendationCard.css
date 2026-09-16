@@ -1,0 +1,60 @@
+.career-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.career-card__header h3 {
+  margin: 0 0 8px;
+  color: #1e293b;
+  font-size: 1.05rem;
+}
+
+.career-card__header > div {
+  flex: 1;
+}
+
+.career-card__toggle {
+  border: none;
+  background: #f1f5f9;
+  color: #2563eb;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.career-card__body {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.career-card__reason {
+  color: #475569;
+  font-size: 0.9rem;
+  margin: 0 0 14px;
+}
+
+.career-card__section {
+  margin-bottom: 14px;
+}
+
+.career-card__section h4 {
+  font-size: 0.85rem;
+  color: #1e293b;
+  margin: 0 0 8px;
+}
+
+.career-card__roadmap {
+  margin: 0;
+  padding-left: 18px;
+  color: #334155;
+  font-size: 0.88rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

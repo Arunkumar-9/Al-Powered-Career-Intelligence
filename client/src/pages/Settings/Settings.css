@@ -1,0 +1,119 @@
+.settings-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 10px 0 40px;
+}
+
+.settings-page h1 {
+  color: #1e293b;
+  margin-bottom: 22px;
+}
+.settings-intro{color:#64748b;margin:-12px 0 22px}.settings-page h2{color:#1e293b;font-size:1.1rem;margin:0 0 8px}.settings-account{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}.settings-account div{background:#f8fafc;border-radius:10px;padding:12px}.settings-account small{display:block;color:#64748b;margin-bottom:4px}.settings-account strong{color:#1e293b;overflow-wrap:anywhere}
+
+.settings-feedback-card {
+  margin-bottom: 22px;
+}
+
+.settings-feedback-hint {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: -6px 0 16px;
+}
+
+.settings-feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settings-feedback-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.settings-feedback-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 560px) {
+  .settings-feedback-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.settings-star-row {
+  display: flex;
+  gap: 4px;
+}
+
+.settings-star {
+  background: none;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: #e2e8f0;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.settings-star--filled {
+  color: #f59e0b;
+}
+
+.settings-feedback-history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.settings-feedback-history li {
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.settings-feedback-history li:last-child {
+  border-bottom: none;
+}
+
+.settings-feedback-history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.settings-feedback-status {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.settings-feedback-status--new {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.settings-feedback-status--reviewed {
+  background: #fef9c3;
+  color: #a16207;
+}
+
+.settings-feedback-status--resolved {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.settings-feedback-date {
+  color: #94a3b8;
+  font-size: 12px;
+}
