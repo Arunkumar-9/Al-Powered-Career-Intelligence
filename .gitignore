@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 
 server/.env
-
+server/uploads/*
+!server/uploads/.gitkeep
 
