@@ -5,7 +5,7 @@ import { logActivity } from "../utils/logActivity.js";
 
 // POST /api/admin/auth/login
 // Dedicated admin login. Reuses the same credential-check pattern as
-// the normal user login (server/controllers/authController.js), but
+// the normal user login (server/controllers/authcontroller.js), but
 // additionally requires role === "admin" — a normal user's correct
 // email/password will NOT get them an admin session.
 export const adminLogin = async (req, res) => {
