@@ -21,3 +21,9 @@ services:
         sync: false
       - key: ADZUNA_COUNTRY
         value: in
+      - key: ADMIN_NAME
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false

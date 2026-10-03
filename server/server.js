@@ -9,6 +9,7 @@ import profileRoutes from "./routes/profileRoutes.js";
 import path from "path";
 import { fileURLToPath } from "url";
 import { existsSync } from "fs";
+import { bootstrapAdmin } from "./utils/bootstrapAdmin.js";
 
 // ---- Milestone 3: AI Powered Career Intelligence ----
 import jobDescriptionRoutes from "./routes/jobDescriptionRoutes.js";
@@ -25,7 +26,6 @@ import chatRoutes from "./routes/chatRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 
 dotenv.config();
-connectDB();
 const app = express();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -84,6 +84,13 @@ if (existsSync(clientDistPath)) {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+const startServer = async () => {
+  await connectDB();
+  await bootstrapAdmin();
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+};
+
+startServer();
