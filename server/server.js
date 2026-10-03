@@ -7,6 +7,8 @@ import resumeRoutes from "./routes/resumeRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
 import profileRoutes from "./routes/profileRoutes.js";
 import path from "path";
+import { fileURLToPath } from "url";
+import { existsSync } from "fs";
 
 // ---- Milestone 3: AI Powered Career Intelligence ----
 import jobDescriptionRoutes from "./routes/jobDescriptionRoutes.js";
@@ -26,7 +28,13 @@ dotenv.config();
 connectDB();
 const app = express();
 
-const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173,http://localhost:8080")
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const clientDistPath = path.resolve(__dirname, "../client/dist");
+const defaultClientUrl = process.env.RENDER_EXTERNAL_HOSTNAME
+  ? `https://${process.env.RENDER_EXTERNAL_HOSTNAME}`
+  : "http://localhost:5173,http://localhost:8080";
+
+const allowedOrigins = (process.env.CLIENT_URL || defaultClientUrl)
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
@@ -59,11 +67,20 @@ app.use("/api/admin", adminRoutes);
 
 app.use("/uploads", express.static("uploads"));
 
-app.get("/", (req, res) => {
+app.get("/health", (req, res) => {
   res.json({
     message: "AI Career Guidance Backend Running 🚀",
   });
 });
+
+// The production Docker image contains the Vite build. Serve it from the
+// Express app so the UI and API share a single Render URL.
+if (existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+  app.get("/{*splat}", (req, res) => {
+    res.sendFile(path.join(clientDistPath, "index.html"));
+  });
+}
 
 const PORT = process.env.PORT || 5000;
 
